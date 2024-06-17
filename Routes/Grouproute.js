@@ -1,0 +1,11 @@
+const express = require("express");
+const {createGroup,getGroup,AllGroups,sendGmsg,Allgmsgs,editGmsg,delgmsg} = require("../controllers/Group.js"); 
+const router = express.Router();
+router.route("/creategroup").post(createGroup);
+router.route("/getgroup/:id").get(getGroup);
+router.route("/allgroup").get(AllGroups);
+router.route("/sendgmsg").post(sendGmsg);
+router.route("/delgmsg/:id").delete(delgmsg);
+router.route("/editgmsg/:id").put(editGmsg);
+router.route("/getgmsg").get(Allgmsgs);
+module.exports = router;

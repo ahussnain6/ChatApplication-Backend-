@@ -1,0 +1,10 @@
+const express = require("express");
+const {SignUP,Signin,UploadProfile,editProfile} = require("../controllers/User");
+const validate = require("../validators/auth-validator");
+const signupvalidation = require("../middleware/Auth-middleware");
+const router = express.Router();
+router.route("/signup").post(validate(signupvalidation),SignUP);
+router.route("/login").post(Signin);
+router.route("/profilepic").post(UploadProfile);
+router.route("/editprofile/:id").put(editProfile);
+module.exports = router;
