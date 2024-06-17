@@ -24,7 +24,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Default route
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
   console.log("Server is running successfully!");
 });
 
