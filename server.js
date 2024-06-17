@@ -17,9 +17,8 @@ const corsOptions = {
   methods: "GET,POST,PUT,DELETE,PATCH,HEAD",credentials: true,};
 app.use(cors(corsOptions));
 app.use(express.json());
-app.get("/",(req,res)=>{
-  console.log("Successfully Server Running!");
-})
+app.get("/",async(req,res)=>{
+  console.log("Successfully Server Running!");})
 app.use("/user",Userroute);
 app.use("/misc",Miscroute);
 app.use("/message",Messageroute);
